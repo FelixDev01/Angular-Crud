@@ -10,6 +10,7 @@
       id="ideia"
       name="ideia"
       placeholder="Digite a sua ideia"
+      [(ngModel)]="ideia.conteudo"
     >
 
     <label for="autor">Autor(a) ou Fonte:</label>
@@ -19,6 +20,7 @@
       id="ideia"
       name="ideia"
       placeholder="Digite a autoria ou fonte"
+      [(ngModel)]="ideia.autoria"
     >
 
     <label for="modelo">Selecione o modelo do card:</label>
@@ -29,7 +31,10 @@
             type="radio"
             id="modelo1"
             value="modelo1"
-            name="modelo-card">
+            name="modelo-card"
+            [(ngModel)]="ideia.modelo"
+            >
+
             <div class="custom-radio">
               <span></span>
             </div>
@@ -38,8 +43,8 @@
           Prévia:
           <div class="modelo modelo1 ff-roboto-mono">
             <img src="/images/modelo1.png" alt="Prévia do modelo 1">
-            <p class="conteudo">Aqui vai o conteudo da ideia</p>
-            <p class="autoria"><b>Aqui vai a autoria</b></p>
+            <p class="conteudo"> {{ ideia.conteudo}}</p>
+            <p class="autoria"><b>{{ ideia.autoria}}</b></p>
           </div>
       </div>
 
@@ -58,8 +63,8 @@
           Prévia:
           <div class="modelo modelo2 ff-roboto-mono">
             <img src="/images/modelo2.png" alt="Prévia do modelo 2">
-            <p class="conteudo">Aqui vai o conteudo da ideia</p>
-            <p class="autoria"><b>Aqui vai a autoria</b></p>
+            <p class="conteudo"> {{ ideia.conteudo}}</p>
+            <p class="autoria"><b>{{ ideia.autoria}}</b></p>
           </div>
       </div>
 
@@ -78,14 +83,14 @@
           Prévia:
           <div class="modelo modelo3 ff-roboto-mono">
             <img src="/images/modelo3.png" alt="Prévia do modelo 3">
-            <p class="conteudo">Aqui vai o conteudo da ideia</p>
-            <p class="autoria"><b>Aqui vai a autoria</b></p>
+            <p class="conteudo"> {{ ideia.conteudo}}</p>
+            <p class="autoria"><b>{{ ideia.autoria}}</b></p>
           </div>
       </div>
     </div>
     <div class="acoes">
-      <button class="botao">Salvar</button>
-      <button class="botao">Cancelar</button>
+      <button (click)="criarIdeia()" class="botao">Salvar</button>
+      <button (click)="cancelarIdeia()" class="botao">Cancelar</button>
     </div>
   </form>
 </section>

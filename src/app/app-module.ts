@@ -6,17 +6,21 @@ import { App } from './app';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
 import { CriarIdeias } from './shared/ideias/criar-ideias/criar-ideias';
+import { FormsModule } from '@angular/forms';
+import { ListarIdeia } from './shared/ideias/listar-ideia/listar-ideia';
 
 @NgModule({
   declarations: [
     App,
     Header,
     Footer,
-    CriarIdeias
+    CriarIdeias,
+    ListarIdeia
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
