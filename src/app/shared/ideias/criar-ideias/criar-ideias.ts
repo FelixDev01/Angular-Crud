@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,7 +15,7 @@ export class CriarIdeias implements OnInit {
     modelo: 'modelo1',
   }
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
 
@@ -25,6 +26,6 @@ export class CriarIdeias implements OnInit {
     }
 
     cancelarIdeia() {
-      alert("Ideia cancelada")
+      this.router.navigate([''])
     }
 }
